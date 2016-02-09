@@ -11,14 +11,14 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class ApiExtension extends Extension
+class HOBApiExtension extends Extension
 {
     /**
      * {@inheritdoc}
      */
     public function load(array $configs, ContainerBuilder $container)
     {
-        $configuration = new ApiConfiguration();
+        $configuration = new HOBApiConfiguration();
         $config = $this->processConfiguration($configuration, $configs);
 
         $container->setParameter($this->getAlias().'.config', $config);

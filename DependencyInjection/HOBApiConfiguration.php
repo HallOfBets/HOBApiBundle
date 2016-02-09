@@ -5,10 +5,10 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 
 /**
- * Class ApiConfiguration
+ * Class HOBApiConfiguration
  * @package HOB\ApiBundle\DependencyInjection
  */
-class ApiConfiguration implements ConfigurationInterface
+class HOBApiConfiguration implements ConfigurationInterface
 {
     public function getConfigTreeBuilder()
     {
