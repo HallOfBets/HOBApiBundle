@@ -1,0 +1,23 @@
+{
+  "name": "hob/api-bundle",
+  "type": "symfony-bundle",
+  "description": "Symfony Api bundle for HOB",
+  "homepage": "https://github.com/sportnco",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alexis CASSAN",
+      "email": "alexiscassan@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.9",
+    "symfony/framework-bundle": "~2.3|~3.0",
+    "guzzlehttp/guzzle": ">=6.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "HOB\\ApiBundle\\": ""
+    }
+  }
+}
