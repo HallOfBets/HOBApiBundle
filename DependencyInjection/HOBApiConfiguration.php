@@ -15,6 +15,9 @@ class HOBApiConfiguration implements ConfigurationInterface
         $treeBuilder    = new TreeBuilder();
         $rootNode       = $treeBuilder->root('hob_api');
 
+        $rootNode->children()
+        ->end();
+
         return $treeBuilder;
     }
 }
