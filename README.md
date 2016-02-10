@@ -1,4 +1,4 @@
-# Bundle containing API Interface for HOB micro services 
+# API Interface for HOB micro services 
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/7bd27a8a-2f53-4f54-b96b-1ab4e7aadb93/big.png)](https://insight.sensiolabs.com/projects/7bd27a8a-2f53-4f54-b96b-1ab4e7aadb93)
 
