@@ -2,4 +2,5 @@
 
 ### Installation 
 1) composer require acassan/HOBApiBundle
-2) Add bundle in AppKernel: new HOB\ApiBundle\ApiBundle(),
+
+2) Add bundle in AppKernel: "new HOB\ApiBundle\HOBApiBundle(),"
