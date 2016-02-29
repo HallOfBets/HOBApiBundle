@@ -2,6 +2,7 @@
 # http://symfony.com/doc/current/book/service_container.html
 parameters:
     hob.api.hob_app_service.endpoint: ~
+    hob.api.hob_auth_service.endpoint: ~
     hob.api.hob_warehouse_service.endpoint: ~
 
 services:
@@ -10,6 +11,10 @@ services:
     hob.client.guzzle:
         class: HOB\ApiBundle\Client\GuzzleClient
         arguments: []
+
+    hob.api.hob_auth_service:
+        class: HOB\ApiBundle\Api\HOBAuthServiceApi
+        arguments: ['@hob.client.guzzle', '%hob.api.hob_auth_service.endpoint%']
 
     hob.api.hob_app_service:
         class: HOB\ApiBundle\Api\HOBAppServiceApi

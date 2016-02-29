@@ -2,35 +2,13 @@
 namespace HOB\ApiBundle\Api;
 
 use HOB\ApiBundle\Model\ApiInterface;
-use HOB\ApiBundle\Model\ClientInterface;
 
 /**
  * Class HOBWarehouseServiceApi
  * @package HOB\ApiBundle\Api
  */
-class HOBWarehouseServiceApi implements ApiInterface
+class HOBWarehouseServiceApi extends BaseApi implements ApiInterface
 {
-    /**
-     * @var ClientInterface
-     */
-    private $client;
-
-    /**
-     * @var string
-     */
-    private $endpoint;
-
-    /**
-     * HOBAppServiceApi constructor.
-     * @param ClientInterface $client
-     * @param $endpoint
-     */
-    public function __construct(ClientInterface $client, $endpoint)
-    {
-        $this->client   = $client;
-        $this->endpoint = $endpoint;
-    }
-
     /**
      * @param array $parameters
      * @param array $headers
@@ -38,9 +16,7 @@ class HOBWarehouseServiceApi implements ApiInterface
      */
     public function getSports(array $parameters = [], array $headers = [])
     {
-        $this->checkEndpoint();
-
-        return $this->client->get($this->endpoint.'/sports', $parameters, $headers);
+        return $this->get('/sports', $parameters, $headers);
     }
 
     /**
@@ -51,9 +27,7 @@ class HOBWarehouseServiceApi implements ApiInterface
      */
     public function getSportTournaments($sportId, array $parameters = [], array $headers = [])
     {
-        $this->checkEndpoint();
-
-        return $this->client->get($this->endpoint.'/sports/'.$sportId.'/tournaments', $parameters, $headers);
+        return $this->get('/sports/'.$sportId.'/tournaments', $parameters, $headers);
     }
 
     /**
@@ -63,9 +37,7 @@ class HOBWarehouseServiceApi implements ApiInterface
      */
     public function getTournaments(array $parameters = [], array $headers = [])
     {
-        $this->checkEndpoint();
-
-        return $this->client->get($this->endpoint.'/tournaments', $parameters, $headers);
+        return $this->get('/tournaments', $parameters, $headers);
     }
 
     /**
@@ -76,9 +48,7 @@ class HOBWarehouseServiceApi implements ApiInterface
      */
     public function getTournamentMatches($tournamentId, array $parameters = [], array $headers = [])
     {
-        $this->checkEndpoint();
-
-        return $this->client->get($this->endpoint.'/tournaments/'.$tournamentId.'/matches', $parameters, $headers);
+        return $this->get('/tournaments/'.$tournamentId.'/matches', $parameters, $headers);
     }
 
     /**
@@ -88,9 +58,7 @@ class HOBWarehouseServiceApi implements ApiInterface
      */
     public function getMatches(array $parameters = [], array $headers = [])
     {
-        $this->checkEndpoint();
-
-        return $this->client->get($this->endpoint.'/matches', $parameters, $headers);
+        return $this->get('/matches', $parameters, $headers);
     }
 
     /**
@@ -101,18 +69,6 @@ class HOBWarehouseServiceApi implements ApiInterface
      */
     public function getMatch($matchId, array $parameters = [], array $headers = [])
     {
-        $this->checkEndpoint();
-
-        return $this->client->get($this->endpoint.'/matches/'.$matchId, $parameters, $headers);
-    }
-
-    /**
-     * Check endpoint parameter of Api
-     */
-    private function checkEndpoint()
-    {
-        if(is_null($this->endpoint)) {
-            throw new \InvalidArgumentException(sprintf("Missing endpoint parameter for Api '%s'", get_class($this)));
-        }
+        return $this->get('/matches/'.$matchId, $parameters, $headers);
     }
 }
